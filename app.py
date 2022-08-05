@@ -64,4 +64,5 @@ def predict():
     return render_template('index.html', prediction_text='Model  has predicted : {}'.format(message), accuracy_text='Accuracy of Model :{}'.format(accr))
 
 
-app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
