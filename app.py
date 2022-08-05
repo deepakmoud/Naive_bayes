@@ -33,20 +33,20 @@ def predict():
     model1=float(request.args.get('model1'))
 
     if model1==0:
-      model=pickle.load(open('project6_decision_model.pkl','rb'))
-      accr="58.33%"
+        model=pickle.load(open('project6_decision_model.pkl','rb'))
+        accr="58.33%"
     elif model1==1:
-      model=pickle.load(open('project6_svm.pkl','rb'))
-      accr="75.00%"
+        model=pickle.load(open('project6_svm.pkl','rb'))
+        accr="75.00%"
     elif model1==2:
-      model=pickle.load(open('project6_random_forest.pkl','rb'))
-      accr="83.33%"
+        model=pickle.load(open('project6_random_forest.pkl','rb'))
+        accr="83.33%"
     elif model1==3:
-      model=pickle.load(open('project6_knn.pkl','rb'))
-      accr="70.83%"
+        model=pickle.load(open('project6_knn.pkl','rb'))
+        accr="70.83%"
     elif model1==4:
-      model=pickle.load(open('project6_naive.pkl','rb'))
-      accr="91.67%"
+        model=pickle.load(open('project6_naive.pkl','rb'))
+        accr="91.67%"
       
 
     dataset= pd.read_excel('DATASET education.xlsx')
@@ -56,9 +56,9 @@ def predict():
     X = sc.fit_transform(X)
     prediction = model.predict(sc.transform([[tenth,twelth,btech,sevsem,sixsem,fivesem,final,medium]]))
     if prediction==0:
-      message="Student not Placed"
+         message="Student not Placed"
     else:
-      message="Student will be placed"
+        message="Student will be placed"
     
         
     return render_template('index.html', prediction_text='Model  has predicted : {}'.format(message), accuracy_text='Accuracy of Model :{}'.format(accr))
