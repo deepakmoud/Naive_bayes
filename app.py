@@ -35,18 +35,7 @@ def predict():
     if model1==0:
         model=pickle.load(open('project6_decision_model.pkl','rb'))
         accr="58.33%"
-    elif model1==1:
-        model=pickle.load(open('project6_svm.pkl','rb'))
-        accr="75.00%"
-    elif model1==2:
-        model=pickle.load(open('project6_random_forest.pkl','rb'))
-        accr="83.33%"
-    elif model1==3:
-        model=pickle.load(open('project6_knn.pkl','rb'))
-        accr="70.83%"
-    elif model1==4:
-        model=pickle.load(open('project6_naive.pkl','rb'))
-        accr="91.67%"
+    
       
 
     dataset= pd.read_excel('DATASET education.xlsx')
